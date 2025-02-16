@@ -38,6 +38,12 @@ DB_DATABASE=news_aggregator
 DB_USERNAME=root
 DB_PASSWORD=root
 ```
+Update News API Keys in .env:
+```
+NEWSAPI_KEY=your_newsapi_key
+NYTIMES_API_KEY=your_nytimes_key
+GUARDIAN_API_KEY=your_guardian_key
+```
 
 ### Step 3: Start Docker Containers
 ```sh
