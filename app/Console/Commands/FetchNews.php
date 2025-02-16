@@ -26,18 +26,19 @@ class FetchNews extends Command
             'country' => 'us',
             'pageSize' => 10,
         ]);
-// dd($response);
+        // print_r($response->json()['articles']);
+        // dd('sher');
         if ($response->successful()) {
             foreach ($response->json()['articles'] as $news) {
-                // Article::updateOrCreate([
-                //     'url' => $news['url'],
-                // ], [
-                //     'title' => $news['title'],
-                //     'description' => $news['description'],
-                //     'source' => $news['source']['name'],
-                //     'author' => $news['author'],
-                //     'published_at' => date('Y-m-d H:i:s', strtotime($news['publishedAt'])),
-                // ]);
+                Article::updateOrCreate([
+                    'url' => $news['url'],
+                ], [
+                    'title' => $news['title'],
+                    'description' => $news['description'],
+                    'source' => $news['source']['name'],
+                    'author' => $news['author'],
+                    'published_at' => date('Y-m-d H:i:s', strtotime($news['publishedAt'])),
+                ]);
             }
         }
     }
