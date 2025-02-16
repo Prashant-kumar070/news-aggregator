@@ -46,6 +46,10 @@ GUARDIAN_API_KEY=your_guardian_key
 ```
 
 ### Step 3: Start Docker Containers
+
+I've added a docker-compose.yml file for easy setup of the development
+
+environment. Run the following command to build and start the application:
 ```sh
 docker-compose up -d --build
 ```
@@ -57,6 +61,7 @@ This will start:
 ### Step 4: Install Dependencies
 ```sh
 docker exec -it news-aggregator-app composer install --no-dev --optimize-autoloader
+docker exec -it news-aggregator-app php artisan key:generate
 ```
 
 ### Step 5: Run Migrations & Seed Database
