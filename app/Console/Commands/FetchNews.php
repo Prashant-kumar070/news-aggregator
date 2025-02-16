@@ -26,8 +26,8 @@ class FetchNews extends Command
             'country' => 'us',
             'pageSize' => 10,
         ]);
-        print_r($response->json()['articles']);
-        dd('sher');
+        // print_r($response->json()['articles']);
+        // dd('sher');
         if ($response->successful()) {
             foreach ($response->json()['articles'] as $news) {
                 Article::updateOrCreate([
