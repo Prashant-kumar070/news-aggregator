@@ -23,3 +23,4 @@ yarn-error.log
 /.zed
 storage/
 bootstrap/cache/
+composer.lock
